@@ -1,5 +1,5 @@
 # Bonetrousle Symphony
----
+
 ### Genre
 - Bullet Hell
 - Roguelite
