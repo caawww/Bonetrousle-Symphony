@@ -9,3 +9,4 @@ The game is inspired by the current bullet hell trend (Vampire Survivors and sim
 
 ---
 - made in Godot 4.2.1
+
