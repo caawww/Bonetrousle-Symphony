@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ko42vgxytdut"]
+
+[ext_resource type="Script" path="res://Characters/player.gd" id="1_ehkxc"]
+
+[node name="Player" type="Node2D"]
+script = ExtResource("1_ehkxc")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true

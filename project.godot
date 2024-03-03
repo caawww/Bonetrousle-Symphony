@@ -13,3 +13,11 @@ config_version=5
 config/name="Bonetrousle Symphony"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[file_customization]
+
+folder_colors={
+"res://Characters/": "red",
+"res://Scenes/": "orange",
+"res://Sprites/": "blue"
+}

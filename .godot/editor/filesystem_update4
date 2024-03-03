@@ -1,0 +1,6 @@
+res://Characters/Player.tscn
+res://Characters/Player.gd
+res://Characters/Entity.gd
+res://Scenes/Game.tscn
+res://Characters/stat.gd
+res://Characters/player.gd
