@@ -22,7 +22,7 @@ var max_value: int:
 	set(new_value):
 		max_value = new_value
 
-func _init(current_val: int, max_val: int, min_val: int):
+func _init(current_val: int, max_val: int, min_val: int) -> void:
 	current_value = current_val
 	min_value = min_val
 	max_value = max_val
