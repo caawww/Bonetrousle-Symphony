@@ -20,7 +20,8 @@ var max_value: int:
 	get:
 		return max_value
 	set(new_value):
-		max_value = new_value
+		#second "new_value" can be replaced with some constant so we don't have OP characters 
+		max_value = clamp(new_value, min_value, new_value)
 
 func _init(current_val: int, max_val: int, min_val: int) -> void:
 	current_value = current_val
