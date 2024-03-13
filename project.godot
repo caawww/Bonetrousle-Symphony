@@ -17,7 +17,10 @@ config/icon="res://game_icon.png"
 [file_customization]
 
 folder_colors={
-"res://Characters/": "red",
-"res://Scenes/": "orange",
-"res://Sprites/": "blue"
+"res://Characters/": "gray",
+"res://Characters/Enemy/": "red",
+"res://Characters/Player/": "blue",
+"res://Levels/": "green",
+"res://Sprites/": "gray",
+"res://Sprites/Source/": "gray"
 }
