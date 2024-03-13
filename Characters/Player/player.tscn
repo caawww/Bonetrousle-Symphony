@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_ehkxc"]
 
-[node name="Player" type="Node2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ehkxc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
+zoom = Vector2(3, 3)

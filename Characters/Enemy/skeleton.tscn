@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://cajufw0c3rjko"]
+
+[ext_resource type="Script" path="res://Characters/Enemy/skeleton.gd" id="1_q26mf"]
+[ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://Sprites/skeleton.png" id="2_c5c5r"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dcf6"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(0, 11, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y6uw"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(32, 11, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fol6n"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(64, 11, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q2aeg"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(96, 11, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_42x8y"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(128, 11, 32, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vw0ad"]
+atlas = ExtResource("2_c5c5r")
+region = Rect2(160, 11, 32, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m4mcx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dcf6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1y6uw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fol6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q2aeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_42x8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vw0ad")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 6.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_udo06"]
+
+[node name="Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_q26mf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+sprite_frames = SubResource("SpriteFrames_m4mcx")
+animation = &"walk"
+frame_progress = 0.464341
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_udo06")

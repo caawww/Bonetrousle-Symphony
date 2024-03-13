@@ -1,6 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0epewrua4tt"]
+[gd_scene load_steps=4 format=3 uid="uid://d0epewrua4tt"]
 
 [ext_resource type="Script" path="res://Levels/main.gd" id="1_e3t63"]
+[ext_resource type="PackedScene" uid="uid://cajufw0c3rjko" path="res://Characters/Enemy/skeleton.tscn" id="2_he6gt"]
+[ext_resource type="PackedScene" uid="uid://ko42vgxytdut" path="res://Characters/Player/player.tscn" id="3_qixdo"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_e3t63")
+
+[node name="Skeleton" parent="." instance=ExtResource("2_he6gt")]
+position = Vector2(-93, -56)
+
+[node name="Player" parent="." instance=ExtResource("3_qixdo")]
