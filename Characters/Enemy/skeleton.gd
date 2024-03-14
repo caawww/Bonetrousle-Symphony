@@ -18,16 +18,16 @@ func _physics_process(_delta: float) -> void:
 	var direction := Input.get_vector(
 		'move_left', 'move_right', 'move_up', 'move_down'
 		)
-	print(abs(direction.angle()))
-	#print(speed.current_value)
+		
 	velocity = 100 * direction
-	move_and_slide()
-	
-	# TODO: PLAY ANIMATION
+
+
 	if velocity.length() != 0:
-		if abs(direction.angle()) < PI / 2:
+		if Input.get_axis("move_left", "move_right") == 1:
 			sprite.set_flip_h(false)
-		else:
+		elif Input.get_axis("move_left", "move_right") == -1:
 			sprite.set_flip_h(true)
 			
 		sprite.play("walk")
+
+	move_and_slide()
