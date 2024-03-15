@@ -9,16 +9,17 @@ func _init() -> void:
 	super._init(100, 100, 0, 100, 100, 0)
 
 
-func _ready() -> void:
-	sprite.play("walk")
+#func _ready() -> void:
+	#sprite.play("walk")
 
 
 func _physics_process(_delta: float) -> void:
-	#var direction := Vector2(100, 0)
+	# TODO: move to player 
 	var direction := Input.get_vector(
 		'move_left', 'move_right', 'move_up', 'move_down'
 		)
 		
+	# TODO: use speed.current_value instead of 100
 	velocity = 100 * direction
 
 
