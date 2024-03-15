@@ -11,3 +11,4 @@ script = ExtResource("1_e3t63")
 position = Vector2(-93, -56)
 
 [node name="Player" parent="." instance=ExtResource("3_qixdo")]
+unique_name_in_owner = true
