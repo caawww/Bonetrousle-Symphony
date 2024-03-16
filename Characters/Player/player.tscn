@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_ehkxc"]
 
 [node name="Player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_ehkxc")
 
 [node name="Camera2D" type="Camera2D" parent="."]

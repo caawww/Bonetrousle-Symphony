@@ -56,6 +56,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_udo06"]
 
 [node name="Skeleton" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_q26mf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
