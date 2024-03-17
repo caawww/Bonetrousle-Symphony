@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Bonetrousle Symphony"
-run/main_scene="res://Levels/main.tscn"
+run/main_scene="res://levels/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://game_icon.png"
 
@@ -23,15 +23,15 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://Characters/": "gray",
-"res://Characters/Enemy/": "red",
-"res://Characters/Player/": "blue",
-"res://Gui/": "gray",
-"res://Levels/": "green",
-"res://Music/": "pink",
-"res://Sounds/": "pink",
-"res://Sprites/": "gray",
-"res://Sprites/Source/": "gray"
+"res://characters/": "gray",
+"res://characters/enemies/": "red",
+"res://characters/player/": "blue",
+"res://gui/": "gray",
+"res://levels/": "green",
+"res://music/": "pink",
+"res://sounds/": "pink",
+"res://sprites/": "gray",
+"res://sprites/source/": "gray"
 }
 
 [input]

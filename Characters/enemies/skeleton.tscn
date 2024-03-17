@@ -1,30 +1,30 @@
 [gd_scene load_steps=11 format=3 uid="uid://cajufw0c3rjko"]
 
-[ext_resource type="Script" path="res://Characters/Enemy/skeleton.gd" id="1_q26mf"]
-[ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://Sprites/skeleton.png" id="2_c5c5r"]
+[ext_resource type="Script" path="res://characters/enemies/skeleton.gd" id="1_p363g"]
+[ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://sprites/skeleton.png" id="2_jmwa1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dcf6"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(0, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y6uw"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(32, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fol6n"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(64, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2aeg"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(96, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42x8y"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(128, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw0ad"]
-atlas = ExtResource("2_c5c5r")
+atlas = ExtResource("2_jmwa1")
 region = Rect2(160, 11, 32, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4mcx"]
@@ -57,7 +57,7 @@ animations = [{
 
 [node name="Skeleton" type="CharacterBody2D"]
 motion_mode = 1
-script = ExtResource("1_q26mf")
+script = ExtResource("1_p363g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

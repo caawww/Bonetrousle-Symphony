@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ko42vgxytdut"]
 
-[ext_resource type="Script" path="res://Characters/Player/player.gd" id="1_ehkxc"]
+[ext_resource type="Script" path="res://characters/player/player.gd" id="1_ehkxc"]
 
 [node name="Player" type="CharacterBody2D"]
 motion_mode = 1
