@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const SKELETON = preload("res://Characters/Enemy/skeleton.tscn")
+const SKELETON = preload("res://characters/enemies/skeleton.tscn")
 var spawn_location := Vector2(-100, - 150)
 
 
