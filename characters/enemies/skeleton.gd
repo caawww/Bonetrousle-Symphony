@@ -3,19 +3,19 @@ extends Entity
 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-#@onready var player: Player = %Player
+@onready var player: Player = get_node("../Player")
 
 
 func _init() -> void:
-	super._init(100, 100, 0, 100, 100, 0)
+	super._init(100, 100, 0, 50, 50, 0)
 
 
 func _physics_process(_delta: float) -> void:
-	#var direction := (player.global_position - global_position).normalized()
-	var direction := (get_global_mouse_position() - global_position).normalized()
+	var direction := (player.global_position - global_position).normalized()
+	#var direction := (get_global_mouse_position() - global_position).normalized()
 	
 	# TODO: use speed.current_value in the equation
-	velocity = 50 * direction
+	velocity = speed.current_value * direction
 
 	if velocity != Vector2.ZERO:
 		if direction.x >= 0:
