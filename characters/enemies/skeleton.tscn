@@ -54,6 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_udo06"]
+radius = 4.0
 
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 2
@@ -66,7 +67,9 @@ texture_filter = 1
 texture_repeat = 1
 sprite_frames = SubResource("SpriteFrames_m4mcx")
 animation = &"walk"
-frame_progress = 0.464341
+frame = 2
+frame_progress = 0.261494
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 7)
 shape = SubResource("CircleShape2D_udo06")
