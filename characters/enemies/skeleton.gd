@@ -3,8 +3,8 @@ extends Entity
 
 
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-#@onready var player: Player = get_node("../Player")
-@onready var player: Player = get_node("%Player")
+@onready var player: Player = get_node("../Player")
+#@onready var player: Player = get_node("%Player")
 
 
 func _init() -> void:
