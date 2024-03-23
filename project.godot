@@ -15,6 +15,11 @@ run/main_scene="res://levels/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://game_icon.png"
 
+[autoload]
+
+GameSaver="*res://singeltons/game_saver.gd"
+Currency="*res://singeltons/currency.gd"
+
 [display]
 
 window/stretch/mode="viewport"
