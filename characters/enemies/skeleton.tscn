@@ -56,6 +56,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_udo06"]
 
 [node name="Skeleton" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_p363g")
 
