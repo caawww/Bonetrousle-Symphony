@@ -2,11 +2,11 @@ extends Area2D
 
 
 # TODO: weapon stat
-const DAMAGE: int = 100
-const WAIT_TIME: int = 5
+const DAMAGE: int = 10
+const WAIT_TIME: int = 5  # seconds
 
 func _physics_process(delta):
-	_change_wait_time()
+	$Timer.wait_time = WAIT_TIME
 
 
 func _on_timer_timeout():
@@ -19,7 +19,3 @@ func _on_timer_timeout():
 		var body = enemies[random_enemy_index]
 		if body.has_method("take_damage"):
 			body.take_damage(DAMAGE)
-
-
-func _change_wait_time():
-	$Timer.wait_time = WAIT_TIME
