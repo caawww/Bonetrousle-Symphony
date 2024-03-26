@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://ko42vgxytdut"]
+[gd_scene load_steps=5 format=3 uid="uid://ko42vgxytdut"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_ehkxc"]
+[ext_resource type="PackedScene" uid="uid://765xu5ffyoxa" path="res://characters/player/gun.tscn" id="2_aubsg"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_khonw"]
 
@@ -22,3 +23,8 @@ texture = SubResource("PlaceholderTexture2D_khonw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_x651f")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(6, 0)
+
+[node name="Gun" parent="." instance=ExtResource("2_aubsg")]
