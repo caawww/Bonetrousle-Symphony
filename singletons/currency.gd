@@ -3,7 +3,7 @@ extends Node
 var currency: int
 
 func _ready():
-	add_to_group(GameSaver.SAVE_GROUP)
+	add_to_group("SavedData")
 
 func set_currency(amount: int):
 	currency = amount
