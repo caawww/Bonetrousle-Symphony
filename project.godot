@@ -35,6 +35,7 @@ folder_colors={
 "res://characters/": "gray",
 "res://characters/enemies/": "red",
 "res://characters/player/": "blue",
+"res://characters/resources/": "purple",
 "res://gui/": "gray",
 "res://levels/": "green",
 "res://music/": "pink",
