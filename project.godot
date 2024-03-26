@@ -22,8 +22,6 @@ Currency="*res://singletons/currency.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=840
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
