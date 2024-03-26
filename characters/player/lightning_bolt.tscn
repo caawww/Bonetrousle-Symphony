@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://hj8k1f3lvosj"]
+[gd_scene load_steps=3 format=3 uid="uid://dage7g7rc2rhk"]
 
 [ext_resource type="Script" path="res://characters/player/lightning_bolt.gd" id="1_oace3"]
 
