@@ -17,8 +17,8 @@ config/icon="res://game_icon.png"
 
 [autoload]
 
-GameSaver="*res://singeltons/game_saver.gd"
-Currency="*res://singeltons/currency.gd"
+GameSaver="*res://singletons/game_saver.gd"
+Currency="*res://singletons/currency.gd"
 
 [display]
 
