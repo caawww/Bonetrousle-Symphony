@@ -28,5 +28,7 @@ func take_damage(damage: int) -> void:
 	health.current_value -= damage
 	
 	if health.current_value != oldhealth:
-		emit_signal("healt_changed", health.current_value) 
-		
+		emit_signal("healt_changed", health.current_value)
+	
+	if health.current_value == 0:
+		queue_free()
