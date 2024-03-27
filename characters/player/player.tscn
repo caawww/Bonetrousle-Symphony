@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_ehkxc"]
 [ext_resource type="PackedScene" uid="uid://765xu5ffyoxa" path="res://characters/player/gun.tscn" id="2_aubsg"]
-[ext_resource type="PackedScene" uid="uid://hj8k1f3lvosj" path="res://characters/player/lightning_bolt.tscn" id="3_g0kpr"]
+[ext_resource type="PackedScene" uid="uid://dage7g7rc2rhk" path="res://characters/player/lightning_bolt.tscn" id="3_g0kpr"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_khonw"]
 
