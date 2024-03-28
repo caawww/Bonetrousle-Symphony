@@ -3,14 +3,7 @@ extends Entity
 
 
 func _init() -> void:
-	super._init(
-		100,    # current_health
-		100,    # max_health
-		0,      # min_health
-		100,    # current_speed
-		100,    # max_speed
-		0       # min_speed
-	)
+	super._init("test")
 	
 	
 func _physics_process(_delta):
