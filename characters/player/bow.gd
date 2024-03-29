@@ -1,6 +1,6 @@
 extends Area2D
 
-const BULLET = preload("res://characters/player/bullet.tscn")
+const BULLET = preload("res://characters/player/arrow.tscn")
 const AUTO_AIM: bool = false
 		
 func _physics_process(delta):

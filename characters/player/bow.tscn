@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://765xu5ffyoxa"]
 
-[ext_resource type="Script" path="res://characters/player/gun.gd" id="1_nl0c3"]
+[ext_resource type="Script" path="res://characters/player/bow.gd" id="1_nl0c3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c3r64"]
 
