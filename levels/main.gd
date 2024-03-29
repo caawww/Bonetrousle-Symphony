@@ -5,7 +5,7 @@ const SKELETON = preload("res://characters/enemies/skeleton.tscn")
 var spawn_location := Vector2(-100, - 150)
 
 
-func _init() -> void:
+func _init() -> void:	
 	for i in range(10):
 		var skeleton_instance : Skeleton = SKELETON.instantiate()
 		skeleton_instance.global_position = spawn_location
