@@ -8,7 +8,7 @@ extends Entity
 
 
 func _init() -> void:
-	super._init(100, 100, 0, 50, 50, 0)
+	super._init("skeleton")
 
 
 func _physics_process(_delta: float) -> void:
