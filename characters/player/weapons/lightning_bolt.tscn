@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://hj8k1f3lvosj"]
 
-[ext_resource type="Script" path="res://characters/player/lightning_bolt.gd" id="1_oace3"]
+[ext_resource type="Script" path="res://characters/player/weapons/lightning_bolt.gd" id="1_oace3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4f3xp"]
 

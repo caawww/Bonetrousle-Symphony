@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=2 format=3 uid="uid://d3oe4ly8nmtng"]
+
+[ext_resource type="Script" path="res://characters/player/weapons/weapon_stats.gd" id="1_re8k7"]
+
+[resource]
+script = ExtResource("1_re8k7")
+damage = 10.0
+area_size = 0.0
+cooldown = 5.0
+speed = 0.0
+range = 0.0
