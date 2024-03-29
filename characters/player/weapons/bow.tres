@@ -7,5 +7,5 @@ script = ExtResource("1_hu1k2")
 damage = 5.0
 area_size = 0.0
 cooldown = 0.0
-speed = 1000.0
+speed = 200.0
 range = 1200.0
