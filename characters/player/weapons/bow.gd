@@ -1,7 +1,7 @@
 extends Area2D
 
 
-const BULLET = preload("res://characters/player/weapons/arrow.tscn")
+const ARROW := preload("res://characters/player/weapons/arrow.tscn")
 const AUTO_AIM: bool = false
 
 func _physics_process(delta):
@@ -15,7 +15,7 @@ func _physics_process(delta):
 
 
 func shoot() -> void:
-	var new_bullet = BULLET.instantiate()
+	var new_bullet := ARROW.instantiate()
 	new_bullet.global_position = %ShootPoint.global_position
 	new_bullet.global_rotation = %ShootPoint.global_rotation
 	%ShootPoint.add_child(new_bullet)

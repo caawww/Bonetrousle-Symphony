@@ -1,16 +1,16 @@
 extends Area2D
 
 
-var travelled = 0
+var travelled_distance: int = 0
 const STATS: WeaponStats = preload("res://characters/player/weapons/bow.tres")
 
 func _physics_process(delta):
-	var direction = Vector2.RIGHT.rotated(rotation)
+	var direction: Vector2 = Vector2.RIGHT.rotated(rotation)
 	
-	var current_speed = STATS.speed
+	var current_speed: int = STATS.speed
 	position += direction * current_speed * delta
-	travelled += current_speed * delta
-	if travelled > STATS.range:
+	travelled_distance += current_speed * delta
+	if travelled_distance > STATS.range:
 		queue_free()
 
 

@@ -8,7 +8,7 @@ func _physics_process(delta):
 
 
 func _on_timer_timeout():
-	var enemies = get_overlapping_bodies()
+	var enemies := get_overlapping_bodies()
 	var number_of_enemies: int = enemies.size()
 	
 	if number_of_enemies > 0:
