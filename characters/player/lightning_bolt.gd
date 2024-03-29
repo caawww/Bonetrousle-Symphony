@@ -1,16 +1,10 @@
 extends Area2D
 
 
-# TODO: weapon stat
-const DAMAGE: int = 10
-const WAIT_TIME: int = 5  # seconds
 const STATS: WeaponStats = preload("res://characters/player/weapons/lightning_bolt.tres")
 
-
 func _physics_process(delta):
-	$Timer.wait_time = WAIT_TIME
-	STATS.damage -= 1
-	print(STATS.damage)
+	$Timer.wait_time = STATS.cooldown
 
 
 func _on_timer_timeout():
@@ -22,4 +16,4 @@ func _on_timer_timeout():
 		
 		var body = enemies[random_enemy_index]
 		if body.has_method("take_damage"):
-			body.take_damage(DAMAGE)
+			body.take_damage(STATS.damage)
