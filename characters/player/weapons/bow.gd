@@ -1,8 +1,9 @@
 extends Area2D
 
-const BULLET = preload("res://characters/player/arrow.tscn")
+
+const BULLET = preload("res://characters/player/weapons/arrow.tscn")
 const AUTO_AIM: bool = false
-		
+
 func _physics_process(delta):
 	if AUTO_AIM:
 		var enemies = get_overlapping_bodies()

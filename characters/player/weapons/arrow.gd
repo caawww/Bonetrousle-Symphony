@@ -1,5 +1,6 @@
 extends Area2D
 
+
 var travelled = 0
 const STATS: WeaponStats = preload("res://characters/player/weapons/bow.tres")
 
