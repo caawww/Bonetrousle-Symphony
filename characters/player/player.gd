@@ -3,16 +3,15 @@ extends Entity
 
 
 func _init() -> void:
-	super._init("test")
-	
-	
+	super._init("skeleton")
+
+
 func _physics_process(_delta):
 	var direction := Input.get_vector(
 		'move_left', 'move_right', 'move_up', 'move_down'
 	)
 
-	# TODO: use speed.current_value in the equation	
-	velocity = 100 * direction
+	velocity = speed.current_value * direction
 	
 	#TODO: Animation and Sprite
 	#if velocity != Vector2.ZERO:
