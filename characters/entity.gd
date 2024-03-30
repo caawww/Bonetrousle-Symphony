@@ -2,6 +2,8 @@ class_name Entity
 extends CharacterBody2D
 
 
+signal health_changed
+
 var stats: EntityStats = null
 var health: Stat = null
 var speed: Stat = null
@@ -17,7 +19,7 @@ func take_damage(damage: int) -> void:
 	health.current_value -= damage
 	
 	if health.current_value != oldhealth:
-		emit_signal("healt_changed", health.current_value)
+		emit_signal("health_changed", health.current_value)
 	
 	if health.current_value == 0:
 		queue_free()
