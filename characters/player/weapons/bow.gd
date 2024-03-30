@@ -4,7 +4,8 @@ extends Area2D
 const ARROW := preload("res://characters/player/weapons/arrow.tscn")
 const AUTO_AIM: bool = false
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	if AUTO_AIM:
 		var enemies = get_overlapping_bodies()
 		if enemies.size() > 0:
