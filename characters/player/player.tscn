@@ -10,13 +10,20 @@
 size = Vector2(6, 6)
 
 [node name="Player" type="CharacterBody2D"]
-collision_mask = 0
+z_index = 1
+collision_mask = 4
 motion_mode = 1
 script = ExtResource("1_ehkxc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 unique_name_in_owner = true
 zoom = Vector2(3, 3)
+limit_left = -1000
+limit_top = -1000
+limit_right = 1000
+limit_bottom = 1000
+limit_smoothed = true
+editor_draw_limits = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(6, 6)
