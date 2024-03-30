@@ -3,7 +3,8 @@ extends Area2D
 
 const STATS: WeaponStats = preload("res://characters/player/weapons/lightning_bolt.tres")
 
-func _physics_process(delta):
+
+func _physics_process(_delta):
 	$Timer.wait_time = STATS.cooldown
 
 
