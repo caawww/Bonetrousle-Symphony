@@ -34,15 +34,15 @@ enabled=PackedStringArray("res://addons/gut/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://characters/": "gray",
+"res://characters/": "pink",
 "res://characters/enemies/": "red",
-"res://characters/player/": "blue",
+"res://characters/player/": "yellow",
 "res://characters/resources/": "purple",
 "res://gui/": "gray",
 "res://levels/": "green",
 "res://music/": "pink",
 "res://sounds/": "pink",
-"res://sprites/": "gray",
+"res://sprites/": "teal",
 "res://sprites/source/": "gray"
 }
 
