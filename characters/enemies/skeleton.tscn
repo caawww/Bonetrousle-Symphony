@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cajufw0c3rjko"]
+[gd_scene load_steps=12 format=3 uid="uid://cajufw0c3rjko"]
 
 [ext_resource type="Script" path="res://characters/enemies/skeleton.gd" id="1_p363g"]
 [ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://sprites/characters/skeleton_walk.png" id="2_jmwa1"]
@@ -56,6 +56,8 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_udo06"]
 radius = 4.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_3v2qa"]
+
 [node name="Skeleton" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 6
@@ -73,3 +75,17 @@ frame_progress = 0.261494
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 7)
 shape = SubResource("CircleShape2D_udo06")
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.5
+one_shot = true
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+scale = Vector2(0.6, 1.1)
+shape = SubResource("CircleShape2D_3v2qa")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
