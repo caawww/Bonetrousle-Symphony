@@ -2,7 +2,7 @@ class_name Entity
 extends CharacterBody2D
 
 
-signal health_changed
+signal health_changed(value: int)
 
 var stats: EntityStats = null
 var health: Stat = null
