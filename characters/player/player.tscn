@@ -35,7 +35,7 @@ shape = SubResource("RectangleShape2D_x651f")
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, 0)
 
-[node name="Gun" parent="." instance=ExtResource("2_aubsg")]
+[node name="Bow" parent="." instance=ExtResource("2_aubsg")]
 
 [node name="LightningBolt" parent="." instance=ExtResource("3_g0kpr")]
 scale = Vector2(1.2, 1.2)
