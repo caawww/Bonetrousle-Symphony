@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0epewrua4tt"]
+[gd_scene load_steps=8 format=3 uid="uid://d0epewrua4tt"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_e3t63"]
 [ext_resource type="PackedScene" uid="uid://x73alun3tgfv" path="res://scenes/ground.tscn" id="2_r5axy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://doy03egj4244" path="res://sprites/ui/progress_bar_background.png" id="4_be47s"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
+[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/deathscreen/deathscreen.tscn" id="7_fdkye"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
@@ -27,11 +28,11 @@ layer_2/tile_data = PackedInt32Array(1900500, 2, 0, 1966036, 2, 0, 2031572, 2, 0
 unique_name_in_owner = true
 z_index = 0
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
-[node name="Hud" type="Control" parent="CanvasLayer"]
+[node name="Hud" type="Control" parent="UI"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 9
@@ -39,7 +40,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 script = ExtResource("4_t2751")
 
-[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/Hud"]
+[node name="HealthBar" type="TextureProgressBar" parent="UI/Hud"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
@@ -57,4 +58,7 @@ tint_under = Color(0.321569, 0.160784, 0.239216, 1)
 tint_over = Color(0.2, 0.1, 0.08, 1)
 tint_progress = Color(0.8, 0.121569, 0.337255, 1)
 
-[connection signal="health_changed" from="Player" to="CanvasLayer/Hud" method="_on_player_health_changed"]
+[node name="Deathscreen" parent="UI" instance=ExtResource("7_fdkye")]
+visible = false
+
+[connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
