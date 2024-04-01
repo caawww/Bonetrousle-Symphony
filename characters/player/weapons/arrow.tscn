@@ -9,7 +9,7 @@
 [node name="Bullet" type="Area2D"]
 top_level = true
 collision_layer = 0
-collision_mask = 3
+collision_mask = 2
 script = ExtResource("1_b4loh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
