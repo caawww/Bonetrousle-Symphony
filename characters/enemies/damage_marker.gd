@@ -2,6 +2,7 @@ extends Marker2D
 
 
 @export var damage_number : PackedScene
+const MAGNITUDE: int = 16
 
 
 func draw_received_damage(amount: int) -> void:
@@ -29,6 +30,5 @@ func _get_damage_number(amount: int):
 	return new_damage_number
 	
 func _get_direction() -> Vector2:
-	var magnitude: float = 16
-	return Vector2(randf_range(-1, 1), randf_range(-1, 0)) * magnitude
+	return Vector2(randf_range(-1, 1), randf_range(-1, 0)) * MAGNITUDE
 	
