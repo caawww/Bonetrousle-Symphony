@@ -8,6 +8,7 @@ var stats: EntityStats = null
 var health: Stat = null
 var speed: Stat = null
 
+
 func _init(entity_type: String):
 	var entity_stats := load("res://characters/resources/%s.tres" % entity_type) as EntityStats
 	health = Stat.new(entity_stats.current_health, entity_stats.max_health, entity_stats.min_health)
@@ -15,6 +16,9 @@ func _init(entity_type: String):
 
 
 func take_damage(damage: int) -> void:
+	if not self is Player:
+		%DamageMarker.draw_received_damage(damage)
+	
 	var oldhealth: int = health.current_value 
 	health.current_value -= damage
 	
