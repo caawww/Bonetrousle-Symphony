@@ -38,3 +38,10 @@ func deal_damage():
 			if target.has_method("take_damage"):
 				target.take_damage(1)
 				$Timer.start()
+
+
+func _on_health_changed(_value):
+	if $AnimationPlayer.is_playing:
+		$AnimationPlayer.stop()
+
+	$AnimationPlayer.play("hit_flash")
