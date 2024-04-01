@@ -6,7 +6,7 @@
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_erj6h"]
 
-[node name="Gun" type="Area2D"]
+[node name="Bow" type="Area2D"]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_nl0c3")

@@ -6,7 +6,7 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uma3o"]
 
-[node name="Bullet" type="Area2D"]
+[node name="Arrow" type="Area2D"]
 top_level = true
 collision_layer = 0
 collision_mask = 2
