@@ -1,10 +1,9 @@
 class_name RunTimer
 extends Timer
 
-
 signal run_finished
-var time_elapsed:int = 0
-@export var game_lenght:int = 10 * 60
+var time_elapsed: int = 0
+@export var game_lenght: int = 10 * 60
 
 
 func _on_timeout():
@@ -14,7 +13,7 @@ func _on_timeout():
 
 
 func _on_run_finished():
-		emit_signal("run_finished")
+	emit_signal("run_finished")
 
 
 func time_left() -> int:

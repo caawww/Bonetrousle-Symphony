@@ -1,7 +1,6 @@
 class_name Enemy_Spawner
 extends Path2D
 
-
 @onready var path_follow_2d = $PathFollow2D
 @onready var mob_scene = preload("res://characters/enemies/skeleton.tscn")
 var max_enemies: int = 60  # predefined
@@ -16,8 +15,8 @@ func set_max_enemies(max_enemies_value: int) -> void:
 
 func get_enemies_ammount() -> int:
 	return enemy_counter
-	
-	
+
+
 func can_spawn_enemy() -> bool:
 	return enemy_counter < max_enemies
 
@@ -31,10 +30,12 @@ func spawn_wave(wave_size: int) -> void:
 	for i in range(wave_size):
 		if not can_spawn_enemy():
 			return
-		
+
 		enemy_counter += 1
 		var new_mob = mob_scene.instantiate()
-		new_mob.global_position = path_follow_2d.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10))
+		new_mob.global_position = (
+			path_follow_2d.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10))
+		)
 		main.add_child(new_mob)
 		new_mob.tree_exited.connect(_on_mob_death)
 

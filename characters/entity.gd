@@ -1,7 +1,6 @@
 class_name Entity
 extends CharacterBody2D
 
-
 signal health_changed(value: int)
 
 var stats: EntityStats = null
@@ -18,12 +17,12 @@ func _init(entity_type: String):
 func take_damage(damage: int) -> void:
 	if not self is Player:
 		%DamageMarker.draw_received_damage(damage)
-	
-	var oldhealth: int = health.current_value 
+
+	var oldhealth: int = health.current_value
 	health.current_value -= damage
-	
+
 	if health.current_value != oldhealth:
 		emit_signal("health_changed", health.current_value)
-	
+
 	if not self is Player and health.current_value == 0:
 		queue_free()
