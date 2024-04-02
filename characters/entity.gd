@@ -4,7 +4,7 @@ extends CharacterBody2D
 
 signal health_changed(value: float)
 
-var stats: EntityStats = null
+
 var health: Stat = null
 var speed: Stat = null
 var attack_speed: Stat = null
