@@ -1,8 +1,8 @@
 extends GutTest
 
 func test_entity_init_all_zeros():
-	var correct_health_values = [1, 1, 1]
-	var correct_speed_values = [2, 2, 2]
+	var correct_health_values = [1.0, 1.0, 1.0]
+	var correct_speed_values = [2.0, 2.0, 2.0]
 	
 	var initialized_entity: Entity = Entity.new("test")
 	
@@ -16,8 +16,8 @@ func test_entity_init_all_zeros():
 		initialized_entity.speed.min_value], correct_speed_values)
 
 func test_entity_init_with_values():
-	var correct_health_values = [100, 100, 0]
-	var correct_speed_values = [50, 50, 0]
+	var correct_health_values = [100.0, 100.0, 0.0]
+	var correct_speed_values = [50.0, 50.0, 0.0]
 	
 	var initialized_entity: Entity = Entity.new("skeleton")
 	
