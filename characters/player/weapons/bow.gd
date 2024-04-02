@@ -1,6 +1,5 @@
 extends Area2D
 
-
 const ARROW := preload("res://characters/player/weapons/arrow.tscn")
 const AUTO_AIM: bool = false
 const STATS: WeaponStats = preload("res://characters/player/weapons/bow.tres")
@@ -8,12 +7,12 @@ const STATS: WeaponStats = preload("res://characters/player/weapons/bow.tres")
 
 func _physics_process(_delta):
 	$Timer.wait_time = STATS.cooldown
-	
+
 	if AUTO_AIM:
 		var enemies = get_overlapping_bodies()
 		if enemies.size() > 0:
 			look_at(enemies[0].global_position)
-			
+
 	else:
 		look_at(get_global_mouse_position())
 

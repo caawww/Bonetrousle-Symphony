@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dje2ollgbsme1"]
+
+[ext_resource type="Script" path="res://singletons/timer.gd" id="1_mald1"]
+
+[node name="Timer" type="Timer"]
+autostart = true
+script = ExtResource("1_mald1")
+
+[connection signal="timeout" from="." to="." method="_on_timeout"]

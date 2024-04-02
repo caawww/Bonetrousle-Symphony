@@ -1,7 +1,6 @@
 class_name WeaponStats
 extends Resource
 
-
 @export_category("DAMAGE")
 @export_range(0, 100, 0.1) var damage: float
 @export_range(0, 100, 0.1) var area_size: float

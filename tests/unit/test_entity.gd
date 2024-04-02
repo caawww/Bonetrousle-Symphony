@@ -1,5 +1,6 @@
 extends GutTest
 
+
 func test_entity_init_all_zeros():
 	var correct_health_values = [1.0, 1.0, 1.0]
 	var correct_speed_values = [2.0, 2.0, 2.0]
