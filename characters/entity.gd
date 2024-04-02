@@ -2,7 +2,7 @@ class_name Entity
 extends CharacterBody2D
 
 
-signal health_changed(value: int)
+signal health_changed(value: float)
 
 var stats: EntityStats = null
 var health: Stat = null
@@ -15,11 +15,11 @@ func _init(entity_type: String):
 	speed = Stat.new(entity_stats.current_speed, entity_stats.max_speed, entity_stats.min_speed)
 
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: float) -> void:
 	if not self is Player:
 		%DamageMarker.draw_received_damage(damage)
 	
-	var oldhealth: int = health.current_value 
+	var oldhealth: float = health.current_value 
 	health.current_value -= damage
 	
 	if health.current_value != oldhealth:
