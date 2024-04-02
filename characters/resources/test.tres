@@ -10,3 +10,6 @@ min_health = 1
 current_speed = 2
 max_speed = 2
 min_speed = 2
+current_attack_speed = 1.0
+max_attack_speed = 1.0
+min_attack_speed = 1.0
