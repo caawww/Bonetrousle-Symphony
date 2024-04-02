@@ -1,14 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0epewrua4tt"]
+[gd_scene load_steps=9 format=3 uid="uid://d0epewrua4tt"]
 
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_e3t63"]
 [ext_resource type="PackedScene" uid="uid://x73alun3tgfv" path="res://scenes/ground.tscn" id="2_r5axy"]
 [ext_resource type="PackedScene" uid="uid://ko42vgxytdut" path="res://characters/player/player.tscn" id="3_qixdo"]
 [ext_resource type="Texture2D" uid="uid://doy03egj4244" path="res://sprites/ui/progress_bar_background.png" id="4_be47s"]
 [ext_resource type="PackedScene" path="res://characters/enemies/enemy_spawner.tscn" id="4_q3cx3"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
+[ext_resource type="PackedScene" uid="uid://dje2ollgbsme1" path="res://singletons/timer.tscn" id="8_845dl"]
 
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_e3t63")
 
 [node name="Ground" parent="." instance=ExtResource("2_r5axy")]
 y_sort_enabled = true
@@ -57,4 +60,7 @@ tint_under = Color(0.321569, 0.160784, 0.239216, 1)
 tint_over = Color(0.2, 0.1, 0.08, 1)
 tint_progress = Color(0.8, 0.121569, 0.337255, 1)
 
+[node name="Timer" parent="." instance=ExtResource("8_845dl")]
+
 [connection signal="health_changed" from="Player" to="CanvasLayer/Hud" method="_on_player_health_changed"]
+[connection signal="run_finished" from="Timer" to="." method="_on_timer_run_finished"]

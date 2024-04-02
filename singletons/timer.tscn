@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cu7gycj7qkwcr"]
+[gd_scene load_steps=2 format=3 uid="uid://dje2ollgbsme1"]
 
 [ext_resource type="Script" path="res://singletons/timer.gd" id="1_mald1"]
 
