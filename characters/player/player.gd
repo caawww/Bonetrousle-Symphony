@@ -26,6 +26,6 @@ func _physics_process(_delta):
 
 
 func _on_health_changed(value):
-	if value == 0:
-		get_parent().get_node("UI/Deathscreen").visible = true
+	if value <= 0:
+		#get_parent().get_node("UI/Deathscreen").visible = true
 		get_tree().change_scene_to_file("res://scenes/deathscreen/deathscreen.tscn")

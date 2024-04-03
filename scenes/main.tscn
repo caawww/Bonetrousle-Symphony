@@ -26,7 +26,6 @@ layer_2/tile_data = PackedInt32Array(1900500, 2, 0, 1966036, 2, 0, 2031572, 2, 0
 
 [node name="Player" parent="." instance=ExtResource("3_qixdo")]
 unique_name_in_owner = true
-z_index = 0
 
 [node name="UI" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
@@ -60,5 +59,8 @@ tint_progress = Color(0.8, 0.121569, 0.337255, 1)
 
 [node name="Deathscreen" parent="UI" instance=ExtResource("7_fdkye")]
 visible = false
+offset_right = -854.0
+offset_bottom = -480.0
 
+[connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
