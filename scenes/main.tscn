@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxy6btei2vt4t" path="res://characters/enemies/enemy_spawner.tscn" id="4_q3cx3"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
-[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/deathscreen/deathscreen.tscn" id="7_fdkye"]
+[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/score_screen/score_screen.tscn" id="7_fdkye"]
 [ext_resource type="PackedScene" uid="uid://dje2ollgbsme1" path="res://singletons/timer.tscn" id="8_845dl"]
 
 [node name="Main" type="Node2D"]
@@ -67,6 +67,7 @@ tint_progress = Color(0.8, 0.121569, 0.337255, 1)
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
+offset_right = -21.0
 offset_bottom = 14.0
 grow_horizontal = 2
 
@@ -74,6 +75,7 @@ grow_horizontal = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+alignment = 1
 
 [node name="Label" type="Label" parent="UI/Hud/MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -86,13 +88,22 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 10
 text = "0"
 
-[node name="Deathscreen" parent="UI" instance=ExtResource("7_fdkye")]
+[node name="ScoreScreen" parent="UI" instance=ExtResource("7_fdkye")]
+unique_name_in_owner = true
+process_mode = 2
 visible = false
-offset_right = -854.0
-offset_bottom = -480.0
+anchors_preset = -1
+anchor_right = 0.333594
+anchor_bottom = 0.333333
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" parent="." instance=ExtResource("8_845dl")]
+game_lenght = 60
 
 [connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
-[connection signal="run_finished" from="Timer" to="." method="_on_timer_run_finished"]
+[connection signal="health_changed" from="Player" to="UI/ScoreScreen" method="_on_player_health_changed"]
+[connection signal="visibility_changed" from="UI/ScoreScreen" to="UI/ScoreScreen" method="_on_visibility_changed"]
+[connection signal="run_finished" from="Timer" to="UI/ScoreScreen" method="_on_timer_run_finished"]

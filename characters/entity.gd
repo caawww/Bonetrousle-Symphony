@@ -6,7 +6,7 @@ signal health_changed(value: float)
 var health: Stat = null
 var speed: Stat = null
 var attack_speed: Stat = null
-var score_per_kill: int = 1
+@export var score_per_kill: int = 1
 
 
 func _init(entity_type: String):
