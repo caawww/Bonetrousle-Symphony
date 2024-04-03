@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dxy6btei2vt4t" path="res://characters/enemies/enemy_spawner.tscn" id="4_q3cx3"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
-[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/deathscreen/deathscreen.tscn" id="7_fdkye"]
+[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/score_screen/score_screen.tscn" id="7_fdkye"]
 [ext_resource type="PackedScene" uid="uid://dje2ollgbsme1" path="res://singletons/timer.tscn" id="8_845dl"]
 
 [node name="Main" type="Node2D"]
@@ -38,10 +38,10 @@ transform = Transform2D(3, 0, 0, 3, 0, 0)
 [node name="Hud" type="Control" parent="UI"]
 texture_filter = 1
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
+anchor_right = 0.016
 anchor_bottom = 1.0
-grow_horizontal = 2
+offset_right = 405.52
+offset_bottom = -480.0
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -67,30 +67,62 @@ tint_under = Color(0.321569, 0.160784, 0.239216, 1)
 tint_over = Color(0.2, 0.1, 0.08, 1)
 tint_progress = Color(0.8, 0.121569, 0.337255, 1)
 
+[node name="MarginContainer" type="MarginContainer" parent="UI/Hud"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_right = -21.0
+offset_bottom = 14.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Hud/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/Hud/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "Score:"
+
+[node name="Score" type="Label" parent="UI/Hud/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 10
+text = "0"
+
 [node name="RunTimerLabel" type="Label" parent="UI/Hud"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -465.0
-offset_top = 12.6667
-offset_right = -424.0
-offset_bottom = 35.6667
+offset_left = 147.5
+offset_top = 207.0
+offset_right = 188.5
+offset_bottom = 230.0
 grow_horizontal = 2
 text = "20:32"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Deathscreen" parent="UI" instance=ExtResource("7_fdkye")]
+[node name="ScoreScreen" parent="UI" instance=ExtResource("7_fdkye")]
+unique_name_in_owner = true
+process_mode = 2
 visible = false
-offset_right = -854.0
-offset_bottom = -480.0
+anchors_preset = -1
+anchor_right = 0.333594
+anchor_bottom = 0.333333
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
 
 [node name="RunTimer" parent="." instance=ExtResource("8_845dl")]
 unique_name_in_owner = true
-game_lenght = 10
+game_lenght = 60
 
 [connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
-[connection signal="run_finished" from="RunTimer" to="." method="_on_timer_run_finished"]
+[connection signal="health_changed" from="Player" to="UI/ScoreScreen" method="_on_player_health_changed"]
+[connection signal="visibility_changed" from="UI/ScoreScreen" to="UI/ScoreScreen" method="_on_visibility_changed"]

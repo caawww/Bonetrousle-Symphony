@@ -19,6 +19,7 @@ config/icon="res://game_icon.png"
 
 GameSaver="*res://singletons/game_saver.gd"
 Currency="*res://singletons/currency.gd"
+RunStatistics="*res://singletons/run_statistics.gd"
 
 [display]
 

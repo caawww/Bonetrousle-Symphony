@@ -6,6 +6,7 @@ signal health_changed(value: float)
 var health: Stat = null
 var speed: Stat = null
 var attack_speed: Stat = null
+@export var score_per_kill: int = 1
 
 
 func _init(entity_type: String):
@@ -30,4 +31,5 @@ func take_damage(damage: float) -> void:
 		emit_signal("health_changed", health.current_value)
 
 	if not self is Player and health.current_value == 0:
+		RunStatistics.add_score(score_per_kill)
 		queue_free()
