@@ -43,13 +43,17 @@ anchor_bottom = 1.0
 offset_right = 426.52
 offset_bottom = -458.0
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 script = ExtResource("4_t2751")
 
 [node name="HealthBar" type="TextureProgressBar" parent="UI/Hud"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 6.0
+offset_left = 9.66667
+offset_top = 6.66667
+offset_right = 49.6667
+offset_bottom = 12.6667
 value = 50.0
 nine_patch_stretch = true
 stretch_margin_left = 3
@@ -99,7 +103,23 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" parent="." instance=ExtResource("8_845dl")]
+[node name="RunTimerLabel" type="Label" parent="UI/Hud"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -465.0
+offset_top = 12.6667
+offset_right = -424.0
+offset_bottom = 35.6667
+grow_horizontal = 2
+text = "20:32"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RunTimer" parent="." instance=ExtResource("8_845dl")]
+unique_name_in_owner = true
 game_lenght = 60
 
 [connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
