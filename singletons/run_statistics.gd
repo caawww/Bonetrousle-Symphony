@@ -20,4 +20,5 @@ func get_score() -> int:
 
 func calculate_rewards() -> int:
 	print("Reward: ", score * SCORE_TO_REWARD_FACTOR)
+	Currency.add_to_currency(score * SCORE_TO_REWARD_FACTOR)
 	return score * SCORE_TO_REWARD_FACTOR
