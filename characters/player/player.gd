@@ -3,7 +3,7 @@ extends Entity
 
 
 func _init() -> void:
-	super._init("skeleton")
+	super._init("player")
 
 
 func _physics_process(_delta):
