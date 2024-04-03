@@ -7,7 +7,7 @@ var score: int = 0
 
 func add_score(value: int):
 	score += value
-	print("Score: ", score)
+	get_node("/root/Main").get_node("%Score").text = str(score)
 
 
 func reset_score():
@@ -19,6 +19,5 @@ func get_score() -> int:
 
 
 func calculate_rewards() -> int:
-	print("Reward: ", score * SCORE_TO_REWARD_FACTOR)
 	Currency.add_to_currency(score * SCORE_TO_REWARD_FACTOR)
 	return score * SCORE_TO_REWARD_FACTOR
