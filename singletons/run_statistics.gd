@@ -1,15 +1,22 @@
 extends Node
 
-const SCORE_TO_REWARD_FACTOR: float = 0.1
+const SCORE_TO_REWARD_FACTOR: float = 1
 
 var score: int = 0
 
+
 func add_score(value: int):
-	print("Score: ", score)
 	score += value
-	
+	print("Score: ", score)
+
+
 func reset_score():
 	score = 0
+
+
+func get_score() -> int:
+	return score
+
 
 func calculate_rewards() -> int:
 	print("Reward: ", score * SCORE_TO_REWARD_FACTOR)
