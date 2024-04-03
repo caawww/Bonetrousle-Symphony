@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://characters/enemies/enemy_spawner.tscn" id="4_q3cx3"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
+[ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/deathscreen/deathscreen.tscn" id="7_fdkye"]
 [ext_resource type="PackedScene" uid="uid://dje2ollgbsme1" path="res://singletons/timer.tscn" id="8_845dl"]
 
 [node name="Main" type="Node2D"]
@@ -30,11 +31,11 @@ unique_name_in_owner = true
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_q3cx3")]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
-[node name="Hud" type="Control" parent="CanvasLayer"]
+[node name="Hud" type="Control" parent="UI"]
 texture_filter = 1
 layout_mode = 3
 anchors_preset = 9
@@ -42,7 +43,7 @@ anchor_bottom = 1.0
 grow_vertical = 2
 script = ExtResource("4_t2751")
 
-[node name="HealthBar" type="TextureProgressBar" parent="CanvasLayer/Hud"]
+[node name="HealthBar" type="TextureProgressBar" parent="UI/Hud"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_right = 40.0
@@ -59,6 +60,14 @@ texture_progress = ExtResource("4_be47s")
 tint_under = Color(0.321569, 0.160784, 0.239216, 1)
 tint_over = Color(0.2, 0.1, 0.08, 1)
 tint_progress = Color(0.8, 0.121569, 0.337255, 1)
+
+[node name="Deathscreen" parent="UI" instance=ExtResource("7_fdkye")]
+visible = false
+offset_right = -854.0
+offset_bottom = -480.0
+
+[connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
+[connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
 
 [node name="Timer" parent="." instance=ExtResource("8_845dl")]
 
