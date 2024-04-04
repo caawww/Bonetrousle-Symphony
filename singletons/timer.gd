@@ -16,7 +16,7 @@ func _on_run_finished():
 	emit_signal("run_finished")
 	get_tree().paused = true
 	%ScoreScreen.visible = true
-	
+
 
 func time_left() -> int:
 	return game_lenght - time_elapsed
