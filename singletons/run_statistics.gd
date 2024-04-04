@@ -1,6 +1,6 @@
 extends Node
 
-const SCORE_TO_REWARD_FACTOR: float = 1
+const SCORE_TO_REWARD_FACTOR: float = 0.1
 
 var score: int = 0
 

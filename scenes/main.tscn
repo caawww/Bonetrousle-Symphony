@@ -30,6 +30,8 @@ layer_2/tile_data = PackedInt32Array(1900500, 2, 0, 1966036, 2, 0, 2031572, 2, 0
 unique_name_in_owner = true
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_q3cx3")]
+max_enemies = 200
+max_wave_size = 20
 
 [node name="UI" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
