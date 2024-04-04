@@ -23,7 +23,7 @@ func _on_player_health_changed(value: float) -> void:
 		%Background.color = "ff1e5390"
 
 
-func _on_timer_run_finished() -> void:
+func _on_run_timer_run_finished():
 	%SurviveMessage.text = "VICTORY"
 	%Background.color = "00a95690"
 
