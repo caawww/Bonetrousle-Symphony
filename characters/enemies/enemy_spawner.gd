@@ -1,12 +1,14 @@
-class_name Enemy_Spawner
+class_name EnemySpawner
 extends Path2D
 
 @onready var path_follow_2d = $PathFollow2D
 @onready var mob_scene = preload("res://characters/enemies/skeleton.tscn")
-var max_enemies: int = 60  # predefined
-var enemy_counter: int = 0
-var max_wave_size: int = 15
 @onready var main = $"../.."
+
+@export var max_enemies: int = 60  # predefined
+@export var max_wave_size: int = 15
+
+var enemy_counter: int = 0
 
 
 func set_max_enemies(max_enemies_value: int) -> void:

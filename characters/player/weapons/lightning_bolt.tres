@@ -4,8 +4,8 @@
 
 [resource]
 script = ExtResource("1_re8k7")
-damage = 10.0
+damage = 100.0
 area_size = 0.0
-cooldown = 5.0
+cooldown = 2.0
 speed = 0.0
-range = 0.0
+attack_range = 0.0
