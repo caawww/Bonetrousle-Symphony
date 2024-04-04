@@ -126,3 +126,4 @@ game_lenght = 60
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/ScoreScreen" method="_on_player_health_changed"]
 [connection signal="visibility_changed" from="UI/ScoreScreen" to="UI/ScoreScreen" method="_on_visibility_changed"]
+[connection signal="run_finished" from="RunTimer" to="UI/ScoreScreen" method="_on_run_timer_run_finished"]
