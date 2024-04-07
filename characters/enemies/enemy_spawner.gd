@@ -28,12 +28,14 @@ func set_max_wave_size(max_wave_size_amount: int) -> void:
 
 
 func spawn_wave(wave_size: int) -> void:
+	if not can_spawn_enemy():
+		return
+			
 	path_follow_2d.progress_ratio = randf()
-	for i in range(wave_size):
-		if not can_spawn_enemy():
-			return
-
+	
+	for i in range(min(wave_size, max_enemies - enemy_counter)):
 		enemy_counter += 1
+		
 		var new_mob = mob_scene.instantiate()
 		new_mob.global_position = (
 			path_follow_2d.global_position + Vector2(randf_range(-10, 10), randf_range(-10, 10))
