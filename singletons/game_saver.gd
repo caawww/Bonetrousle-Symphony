@@ -20,7 +20,7 @@ func save_game_to_file(file_name: String):
 
 	for node in save_nodes:
 		if !node.has_method("save"):
-			return
+			continue
 
 		var node_data = node.call("save")
 		var json_string = JSON.stringify(node_data)
