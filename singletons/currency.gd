@@ -20,6 +20,7 @@ func add_to_currency(amount: int):
 
 
 func save():
+	print(currency)
 	var save_dict = {
 		GameSaver.AUTOLOADS_SYMBOL: true,
 		GameSaver.TREE_POSITION_SYMBOL: get_path(),
@@ -30,3 +31,7 @@ func save():
 
 func load(save_dict: Dictionary):
 	currency = save_dict.get("amount")
+	
+	
+func reset():
+	set_currency(0)

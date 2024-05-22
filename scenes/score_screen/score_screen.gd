@@ -5,6 +5,7 @@ func _ready():
 	%Score.text = str(RunStatistics.get_score())
 	%Reward.text = str(RunStatistics.calculate_rewards())
 	%TotalCurrency.text = str(Currency.get_currency())
+	GameSaver.save_game()
 
 
 func _on_restart_button_pressed():
@@ -14,6 +15,7 @@ func _on_restart_button_pressed():
 
 
 func _on_quit_button_pressed():
+	GameSaver.save_game()
 	get_tree().quit()
 
 
