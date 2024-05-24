@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://cajufw0c3rjko"]
+[gd_scene load_steps=20 format=3 uid="uid://cajufw0c3rjko"]
 
 [ext_resource type="Script" path="res://characters/enemies/skeleton.gd" id="1_p363g"]
 [ext_resource type="Shader" path="res://characters/enemies/hit_flash.gdshader" id="2_dn46i"]
 [ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://sprites/characters/skeleton_walk.png" id="2_jmwa1"]
+[ext_resource type="Resource" uid="uid://psb3ve1x08lx" path="res://characters/resources/skeleton.tres" id="2_qt5me"]
 [ext_resource type="Script" path="res://characters/enemies/damage_marker.gd" id="3_6pd6t"]
 [ext_resource type="PackedScene" uid="uid://ck3nump7q1b2u" path="res://characters/enemies/damage_number.tscn" id="4_nx5u7"]
 
@@ -110,6 +111,7 @@ collision_mask = 6
 motion_mode = 1
 script = ExtResource("1_p363g")
 score_per_kill = 5
+stats = ExtResource("2_qt5me")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
