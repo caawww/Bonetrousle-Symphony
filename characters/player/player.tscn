@@ -1,14 +1,88 @@
-[gd_scene load_steps=7 format=3 uid="uid://ko42vgxytdut"]
+[gd_scene load_steps=18 format=3 uid="uid://ko42vgxytdut"]
 
 [ext_resource type="Script" path="res://characters/player/player.gd" id="1_ehkxc"]
 [ext_resource type="Resource" uid="uid://cstmiu1jwo6d4" path="res://characters/resources/player.tres" id="2_1juhq"]
 [ext_resource type="PackedScene" uid="uid://765xu5ffyoxa" path="res://characters/player/weapons/bow.tscn" id="2_aubsg"]
 [ext_resource type="PackedScene" uid="uid://hj8k1f3lvosj" path="res://characters/player/weapons/lightning_bolt.tscn" id="3_g0kpr"]
+[ext_resource type="Shader" path="res://characters/vfx/hit_flash.gdshader" id="3_sebxy"]
+[ext_resource type="Texture2D" uid="uid://b4ifvvh5jdvp3" path="res://sprites/characters/protagonist.png" id="4_2hh03"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_khonw"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_i1tyh"]
+radius = 5.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_x651f"]
-size = Vector2(6, 6)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lef4x"]
+resource_local_to_scene = true
+shader = ExtResource("3_sebxy")
+shader_parameter/hit_opacity = 0.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gw5jm"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_exlpj"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1peua"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckcqa"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulnar"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rbyeg"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq5gn"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq887"]
+atlas = ExtResource("4_2hh03")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7ljy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gw5jm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_exlpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1peua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ckcqa")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulnar")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rbyeg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq5gn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq887")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 collision_mask = 4
@@ -26,12 +100,18 @@ limit_bottom = 1000
 limit_smoothed = true
 editor_draw_limits = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(6, 6)
-texture = SubResource("PlaceholderTexture2D_khonw")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_x651f")
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_i1tyh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+material = SubResource("ShaderMaterial_lef4x")
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_w7ljy")
+animation = &"idle"
+frame_progress = 0.456236
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(6, 0)
