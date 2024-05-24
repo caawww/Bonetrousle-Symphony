@@ -1,12 +1,5 @@
 class_name Skeleton
-extends Entity
-
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var player: Player = get_node("../Player")
-
-
-func _init() -> void:
-	super._init("skeleton")
+extends Enemy
 
 
 func _physics_process(_delta: float) -> void:
@@ -39,6 +32,10 @@ func deal_damage():
 
 
 func _on_health_changed(_value):
+	if health.current_value == 0:
+		RunStatistics.add_score(score_per_kill)
+		queue_free()
+		
 	if $AnimationPlayer.is_playing:
 		$AnimationPlayer.stop()
 

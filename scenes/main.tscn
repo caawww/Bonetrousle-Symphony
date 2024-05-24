@@ -124,7 +124,6 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 game_lenght = 60
 
-[connection signal="health_changed" from="Player" to="Player" method="_on_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/ScoreScreen" method="_on_player_health_changed"]
 [connection signal="visibility_changed" from="UI/ScoreScreen" to="UI/ScoreScreen" method="_on_visibility_changed"]
