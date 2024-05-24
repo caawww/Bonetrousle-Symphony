@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0epewrua4tt"]
+[gd_scene load_steps=12 format=3 uid="uid://d0epewrua4tt"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_e3t63"]
 [ext_resource type="PackedScene" uid="uid://x73alun3tgfv" path="res://scenes/ground.tscn" id="2_r5axy"]
 [ext_resource type="PackedScene" uid="uid://ko42vgxytdut" path="res://characters/player/player.tscn" id="3_qixdo"]
 [ext_resource type="Texture2D" uid="uid://doy03egj4244" path="res://sprites/ui/progress_bar_background.png" id="4_be47s"]
-[ext_resource type="PackedScene" uid="uid://dxy6btei2vt4t" path="res://characters/enemies/enemy_spawner.tscn" id="4_q3cx3"]
+[ext_resource type="PackedScene" uid="uid://dxy6btei2vt4t" path="res://singletons/enemy_spawner.tscn" id="4_q3cx3"]
 [ext_resource type="Script" path="res://scenes/hud.gd" id="4_t2751"]
+[ext_resource type="PackedScene" uid="uid://cajufw0c3rjko" path="res://characters/enemies/skeleton/skeleton.tscn" id="5_brr81"]
 [ext_resource type="Texture2D" uid="uid://d3f16mvi8pnt6" path="res://sprites/ui/progress_bar_border.png" id="5_nyfxp"]
+[ext_resource type="PackedScene" uid="uid://jbojvl73eqj6" path="res://characters/enemies/fire_elemental/fire_elemental.tscn" id="6_w11vl"]
 [ext_resource type="PackedScene" uid="uid://cdxw05o0skpu6" path="res://scenes/score_screen/score_screen.tscn" id="7_fdkye"]
 [ext_resource type="PackedScene" uid="uid://dje2ollgbsme1" path="res://singletons/timer.tscn" id="8_845dl"]
 
@@ -30,6 +32,7 @@ layer_2/tile_data = PackedInt32Array(1900500, 2, 0, 1966036, 2, 0, 2031572, 2, 0
 unique_name_in_owner = true
 
 [node name="EnemySpawner" parent="Player" instance=ExtResource("4_q3cx3")]
+enemy_scenes = Array[PackedScene]([ExtResource("5_brr81"), ExtResource("6_w11vl")])
 max_enemies = 200
 max_wave_size = 20
 
@@ -123,6 +126,12 @@ metadata/_edit_use_anchors_ = true
 [node name="RunTimer" parent="." instance=ExtResource("8_845dl")]
 unique_name_in_owner = true
 game_lenght = 60
+
+[node name="TopLeftBoundary" type="Marker2D" parent="."]
+position = Vector2(-473, -356)
+
+[node name="BottomRightBoundary" type="Marker2D" parent="."]
+position = Vector2(497, 373)
 
 [connection signal="health_changed" from="Player" to="UI/Hud" method="_on_player_health_changed"]
 [connection signal="health_changed" from="Player" to="UI/ScoreScreen" method="_on_player_health_changed"]
