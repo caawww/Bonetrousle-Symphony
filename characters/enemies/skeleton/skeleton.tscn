@@ -1,39 +1,39 @@
 [gd_scene load_steps=20 format=3 uid="uid://cajufw0c3rjko"]
 
-[ext_resource type="Script" path="res://characters/enemies/skeleton.gd" id="1_p363g"]
-[ext_resource type="Shader" path="res://characters/enemies/hit_flash.gdshader" id="2_dn46i"]
-[ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://sprites/characters/skeleton_walk.png" id="2_jmwa1"]
-[ext_resource type="Resource" uid="uid://psb3ve1x08lx" path="res://characters/resources/skeleton.tres" id="2_qt5me"]
-[ext_resource type="Script" path="res://characters/enemies/damage_marker.gd" id="3_6pd6t"]
-[ext_resource type="PackedScene" uid="uid://ck3nump7q1b2u" path="res://characters/enemies/damage_number.tscn" id="4_nx5u7"]
+[ext_resource type="Script" path="res://characters/enemies/skeleton/skeleton.gd" id="1_ynija"]
+[ext_resource type="Resource" uid="uid://psb3ve1x08lx" path="res://characters/resources/skeleton.tres" id="2_o45yl"]
+[ext_resource type="Shader" path="res://characters/vfx/hit_flash.gdshader" id="3_0g3tv"]
+[ext_resource type="Texture2D" uid="uid://cribjk32sk6qt" path="res://sprites/characters/skeleton_walk.png" id="4_hn1e4"]
+[ext_resource type="Script" path="res://characters/vfx/damage_marker.gd" id="5_hudan"]
+[ext_resource type="PackedScene" uid="uid://ck3nump7q1b2u" path="res://characters/vfx/damage_number.tscn" id="6_yrhba"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dq4vi"]
 resource_local_to_scene = true
-shader = ExtResource("2_dn46i")
+shader = ExtResource("3_0g3tv")
 shader_parameter/hit_opacity = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dcf6"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(0, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1y6uw"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(32, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fol6n"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(64, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q2aeg"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(96, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_42x8y"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(128, 11, 32, 21)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vw0ad"]
-atlas = ExtResource("2_jmwa1")
+atlas = ExtResource("4_hn1e4")
 region = Rect2(160, 11, 32, 21)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m4mcx"]
@@ -109,9 +109,9 @@ texture_filter = 1
 collision_layer = 2
 collision_mask = 6
 motion_mode = 1
-script = ExtResource("1_p363g")
+script = ExtResource("1_ynija")
 score_per_kill = 5
-stats = ExtResource("2_qt5me")
+stats = ExtResource("2_o45yl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -142,8 +142,8 @@ shape = SubResource("CircleShape2D_3v2qa")
 unique_name_in_owner = true
 texture_filter = 1
 position = Vector2(0, -14)
-script = ExtResource("3_6pd6t")
-damage_number = ExtResource("4_nx5u7")
+script = ExtResource("5_hudan")
+damage_number = ExtResource("6_yrhba")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
