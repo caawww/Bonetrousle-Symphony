@@ -12,6 +12,7 @@ xp_vlaues = Array[int]([1])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_dykm7")
 
 [node name="Area2D" type="Area2D" parent="."]
