@@ -34,6 +34,7 @@ func deal_damage():
 func _on_health_changed(_value):
 	if health.current_value == 0:
 		RunStatistics.add_score(score_per_kill)
+		drop_xp(Xp.XP_LEVELS.XP1)
 		queue_free()
 		
 	if $AnimationPlayer.is_playing:
