@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EntityStats" load_steps=2 format=3 uid="uid://dw4wuacp8nmp7"]
+
+[ext_resource type="Script" path="res://characters/entity_stats.gd" id="1_5s3w8"]
+
+[resource]
+script = ExtResource("1_5s3w8")
+current_health = 30
+max_health = 30
+min_health = 0
+current_speed = 70
+max_speed = 70
+min_speed = 0
+current_attack_speed = 1.0
+max_attack_speed = 2.0
+min_attack_speed = 1.0
