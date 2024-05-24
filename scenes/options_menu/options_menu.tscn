@@ -38,9 +38,14 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Fullscreen"
 
+[node name="SaveReset" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Save Reset"
+
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Back"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/FullscreenButton" to="." method="_on_fullscreen_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/SaveReset" to="." method="_on_save_reset_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

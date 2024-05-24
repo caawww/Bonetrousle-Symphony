@@ -30,3 +30,7 @@ func save():
 
 func load(save_dict: Dictionary):
 	currency = save_dict.get("amount")
+	
+	
+func reset():
+	set_currency(0)

@@ -60,3 +60,31 @@ func get_node_for_load(node_data: Dictionary):
 	var node = load(node_data[FILE_NAME_SYMBOL]).instantiate()
 	get_node(node_data[PARENT_TREE_POSITION_SYMBOL]).add_child(node)
 	return node
+
+
+func reset_save():
+	reset_nodes()
+	DirAccess.remove_absolute(DEFAULT_SAVE_FILE)
+	
+	
+func reset_nodes():
+	if not FileAccess.file_exists(DEFAULT_SAVE_FILE):
+		return
+
+	var game_save = FileAccess.open(DEFAULT_SAVE_FILE, FileAccess.READ)
+
+	while game_save.get_position() < game_save.get_length():
+		var json_string = game_save.get_line()
+		var json = JSON.new()
+		var parse_result = json.parse(json_string)
+
+		if not parse_result == OK:
+			continue
+
+		var node_data = json.get_data()
+		var node = get_node_for_load(node_data)
+
+		if !node.has_method("reset"):
+			continue
+
+		node.call("reset")
