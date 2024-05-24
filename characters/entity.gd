@@ -11,13 +11,12 @@ var attack_speed: Stat = null
 
 
 func _ready() -> void:
-	var entity_stats := stats
-	health = Stat.new(entity_stats.current_health, entity_stats.max_health, entity_stats.min_health)
-	speed = Stat.new(entity_stats.current_speed, entity_stats.max_speed, entity_stats.min_speed)
+	health = Stat.new(stats.current_health, stats.max_health, stats.min_health)
+	speed = Stat.new(stats.current_speed, stats.max_speed, stats.min_speed)
 	attack_speed = Stat.new(
-		entity_stats.current_attack_speed,
-		entity_stats.max_attack_speed,
-		entity_stats.min_attack_speed
+		stats.current_attack_speed,
+		stats.max_attack_speed,
+		stats.min_attack_speed
 	)
 
 

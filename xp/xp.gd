@@ -21,3 +21,5 @@ func _on_area_2d_body_entered(body):
 		
 	var p = body as Player
 	p.add_xp(xp_vlaues[level])
+	queue_free()
+	
