@@ -16,4 +16,8 @@ func set_xp_level(lvl: XP_LEVELS):
 
 
 func _on_area_2d_body_entered(body):
-	pass # Replace with function body.
+	if not body is Player:
+		return
+		
+	var p = body as Player
+	p.add_xp(xp_vlaues[level])
